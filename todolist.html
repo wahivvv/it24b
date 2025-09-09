@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+</head>
+
+<body>
+    <h1>To do list</h1>
+    <input type="text" id="taskInput" placeholder="Add a task..." />
+    <button onclick="addTask()">Add</button>
+
+    <ul id="taskList">Tasks goes here</ul>
+
+    <script>
+
+        function addTask() {
+            const taskText = getTaskText();
+
+            if (taskText) {
+                addTaskItem(taskText);
+            } else {
+                console.log("No task entered");
+            }
+        }
+
+        function getTaskText() {
+            const input = document.getElementById("taskInput");
+            const value = input.value.trim();
+            console.log("getTaskText() called -> ", value);
+            return value;
+        }
+
+        function addTaskItem(taskText) {
+            const li = document.createElement("li");
+            li.textContent = taskText;
+
+            document.getElementById("taskList").appendChild(li);
+            console.log("addTaskItem() called -> ", taskText, Date()); 
+            
+            const deleteBtn = createDeleteButton(li);
+            li.appendChild(deleteBtn);
+        }
+        function createDeleteButton(){
+            consnt deleteBtn = document.createElement("button");
+            deleteBtn.TextContent = " x ";
+            deleteBtn.className = " delete-btn";
+            deleteBtn.style.marginLeft = " 8px "
+            delete.onclick = () => handleDeleteClick(li);
+            
+            console.log("createDeleteButton() called ->", li.textContent);
+            return deleteBtn;
+
+        }
+        function handleDeleteButton(li){
+            console.log("handleDeleteClick() ->", li.textContent.(" x ","").trim(),Date()
+            li.remove();
+        }
+
+    </script>
+</body>
+
+</html>
