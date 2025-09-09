@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    
+    <h4>Username</h4>
+    <input type="text" id="textbox" placeholder="Enter your name"
+        oinput="updateDisplay()">
+    <br>
+
+    <h4>Password</h4>
+    <input type="password" id="password" placeholder="Enter your password"
+        oinput="recordPassword()">
+
+    <h1 id="displayText"> Your text will appear here</h1>
+    
+        function updateDisplay(){
+        var textbox = document.getElementById('textbox');
+        var displayText = document.getElementById('displayText');
+
+        displayText.textContent = textbox.value;
+        console.log(textbox.value +" "+Date());
+    }
+
+    function recordPassword(){
+        var password = document.getElementById('password');
+        console.log(password.value +" "+Date());
+    }
+
+</body>
+</html>
