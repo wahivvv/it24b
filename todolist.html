@@ -62,6 +62,31 @@
 
     }
 
+    function createEditButton((li.span){
+        const editBtn = document.createElement("button");
+        editBtn.textContent = " Edit ";
+        editBtn.className = "edit-btn";
+        editBtn.style.marginLeft = " 8px ";
+        editBtn.onclick = () => handleEditClick(li);
 
+        console.log("createEditButton() called ->", taskSpan.textContent);
+        return editBtn;
+    }
+    function handleEditClick(li){
+        const currentText = li.firstChild.textContent,trimm();
+        console.log("handleEditClick() -> current;", )currentText, Date());
+
+        const newText = prompt("Edit your task:", currentText);
+
+        if(newText !== null && newText.trim() !== ""){
+            li.firstChild.textContent = newText.trim();
+
+            console.log("handleEditClick() -> updated to:", newText.trim(), Date());
+        } else{
+            console.log("handleEditClick -> no changes made");
+        }
+    }
+
+</script>
 </body>
 </html>
